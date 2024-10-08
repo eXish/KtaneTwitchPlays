@@ -111,7 +111,10 @@ public class TypingTutorComponentSolver : ReflectionComponentSolver
 				}
 			}
 			if (!noKeyboard)
+			{
 				_component.CallMethod("Submit");
+				yield return new WaitForSeconds(.1f);
+			}
 			else
 				yield return Click(3);
 		}
